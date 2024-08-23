@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
-import Toast from './Components/Toast';
 
 function App() {
   const [amount, settingAmount] = useState('');
   const [productTitle, setProductTitle] = useState('');
   const [productPrice, setProductPrice] = useState('');
   const [initialProductPrice, initialPrice] = useState(0);
-  const [toastActive, setToastActive] = useState(false);
 
   const handleAddExpense = () => {
     const price = parseFloat(productPrice);
@@ -16,7 +14,6 @@ function App() {
     }
     setProductTitle('');
     setProductPrice('');
-    setToastActive(true);
   };
 
   return (
@@ -84,7 +81,6 @@ function App() {
           </div>
         </div>
       </div>
-      <Toast isActive={toastActive} onClose={() => setToastActive(false)} />
     </>
   );
 }
